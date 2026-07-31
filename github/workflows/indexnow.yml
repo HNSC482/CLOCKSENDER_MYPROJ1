@@ -1,0 +1,25 @@
+name: "Sitemap IndexNow Automation"
+
+on:
+  # Triggers automatically every time you push code modifications to main
+  push:
+    branches:
+      - main
+  # Triggers automatically every single day at midnight to catch stale updates
+  schedule:
+    - cron: "0 0 * * *"
+  # Allows you to click a button in GitHub Actions to force an instant index run
+  workflow_dispatch:
+
+jobs:
+  ping-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse Sitemap and Submit to Bing
+        uses: bojieyang/indexnow-action@v2
+        with:
+          sitemap-location: "https://www.nsccomputers.jo3.org/sitemap.xml"
+          since: 1
+          since-unit: "day"
+          key: ${{ secrets.INDEXNOW_KEY }}
+          key-location: "https://www.nsccomputers.jo3.org{{ secrets.INDEXNOW_KEY }}.txt"
