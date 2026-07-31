@@ -289,6 +289,60 @@
         // Start clock immediately on page load
         startTimer();
     </script>
+
+<!-- START: Attractive Custom Portal Link to About Page -->
+<div style="max-width: 550px; margin: 40px auto; padding: 3px; background: linear-gradient(135deg, #0056b3, #00c6ff, #0056b3); border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 86, 179, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease;" 
+     onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 15px 35px rgba(0, 86, 179, 0.25)';" 
+     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 25px rgba(0, 86, 179, 0.15)';"
+     class="nsc-portal-card">
+    
+    <a href="./aboutgp.html" style="display: block; background: #ffffff; padding: 25px; border-radius: 10px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; transition: background 0.3s ease;"
+       onmouseover="this.style.background='#fafbfc';" 
+       onmouseout="this.style.background='#ffffff';">
+        
+        <!-- Header Tag and Icon Design -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="font-size: 0.75rem; background: #e6f0fa; color: #0056b3; font-weight: 700; padding: 5px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                Corporate Profile
+            </span>
+            <!-- Animated Arrow Icon -->
+            <span id="portal-arrow" style="font-size: 1.3rem; color: #0056b3; transition: transform 0.3s ease; font-weight: bold;">
+                ➔
+            </span>
+        </div>
+
+        <!-- Main Heading -->
+        <h3 style="margin: 0 0 8px 0; color: #1a202c; font-size: 1.35rem; font-weight: 800; line-height: 1.3;">
+            Meet Our Founder & Explore NSC Accounting Solutions
+        </h3>
+
+        <!-- Short Teaser Copy -->
+        <p style="margin: 0; color: #4a5568; font-size: 0.95rem; line-height: 1.5;">
+            Discover the corporate vision of Harish Jitendrabhai Solanki and see how our user-defined, windows-based ERP structures adapt dynamically to your workflow.
+        </p>
+    </a>
+</div>
+
+<!-- Script to animate the arrow icon independently when hovering the container -->
+<script>
+(function() {
+    const card = document.querySelector('.nsc-portal-card');
+    const arrow = document.getElementById('portal-arrow');
+    if (card && arrow) {
+        card.addEventListener('mouseenter', () => {
+            arrow.style.transform = 'translateX(6px)';
+        });
+        card.addEventListener('mouseleave', () => {
+            arrow.style.transform = 'translateX(0)';
+        });
+    }
+})();
+</script>
+<!-- END: Attractive Custom Portal Link to About Page -->
+
+
+
+    
 </body>
 </html>
 
