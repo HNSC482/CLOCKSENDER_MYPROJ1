@@ -1,25 +1,30 @@
-name: "Sitemap IndexNow Automation"
+name: IndexNow URL Submission
 
 on:
-  # Triggers automatically every time you push code modifications to main
   push:
     branches:
-      - main
-  # Triggers automatically every single day at midnight to catch stale updates
-  schedule:
-    - cron: "0 0 * * *"
-  # Allows you to click a button in GitHub Actions to force an instant index run
-  workflow_dispatch:
+      - main  # Change this to 'master' if your default branch is master
+    paths:
+      - '**/*.html'  # Only triggers if an HTML file is added or changed
 
 jobs:
-  ping-indexnow:
+  submit-to-indexnow:
     runs-on: ubuntu-latest
     steps:
-      - name: Parse Sitemap and Submit to Bing
-        uses: bojieyang/indexnow-action@v2
-        with:
-          sitemap-location: "https://www.nsccomputers.jo3.org/sitemap.xml"
-          since: 1
-          since-unit: "day"
-          key: ${{ secrets.INDEXNOW_KEY }}
-          key-location: "https://www.nsccomputers.jo3.org{{ secrets.INDEXNOW_KEY }}.txt"
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Send POST Request to Bing IndexNow
+        run: |
+          curl -X POST https://bing.com \
+          -H "Content-Type: application/json; charset=utf-8" \
+          -d '{
+            "host": "yourcustomdomain.com",
+            "key": "${{ secrets.INDEXNOW_KEY }}",
+            "keyLocation": "https://www.nsccomputers.jo3.org{{secrets.INDEXNOW_KEY }}.txt",
+            "urlList": [
+              "https://www.nsccomputers.jo3.org/",
+              "https://www.nsccomputers.jo3.org/aboutgp.html",
+              "https://www.nsccomputers.jo3.org/nscgallery.html"
+            ]
+          }'
