@@ -44,7 +44,69 @@
         .btn-call { background: #007bff; }
         .btn-whatsapp { background: #28a745; }
         .btn-web { background: #17a2b8; }
-        .btn:hover { opacity: 0.9; transform: scale(1.02); }
+        .btn:hover { opacity: 0.9; transform: scale(1.02)}
+
+        section{
+    padding:90px 8%;
+}
+
+.sectionTitle{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.sectionSub{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    opacity:.9;
+    line-height:32px;
+    margin-bottom:60px;
+}
+
+.welcomeGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.card{
+    padding:35px;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,198,255,.3);
+}
+
+.card h3{
+    color:cyan;
+    margin-bottom:18px;
+}
+
+.card p{
+    line-height:30px;
+}
+
+.highlight{
+    color:#00ffd0;
+    font-weight:bold;
+}
+
+footer{
+    padding:40px;
+    text-align:center;
+    background:#050d17;
+    color:#bbb;
+}
+
+body.light footer{
+    background:#ddd;
+    color:#111;
+}
     </style>
 
 <!-- Schema.org Organizational Markup for AI Grounding -->
@@ -165,6 +227,162 @@
     setInterval(updateQuote, 6500);
 })();
 </script>
+<!-- ================= FAQ SECTION ================= -->
+
+<section id="faq">
+
+<h2 class="sectionTitle">
+Frequently Asked Questions
+</h2>
+
+<p class="sectionSub">
+Common questions about NSC Computers software solutions.
+</p>
+
+
+<div class="welcomeGrid">
+
+
+<div class="card glass">
+
+<h3>❓ Can software be customized according to our business?</h3>
+
+<p>
+Yes. NSC Computers develops user-defined software according to your
+business process and requirements.
+</p>
+
+</div>
+
+
+<div class="card glass">
+
+<h3>❓ Do you provide ERP solutions for textile and garment industries?</h3>
+
+<p>
+Yes. We provide solutions for garment manufacturing, textile,
+texturizing, weaving, dyeing and embroidery industries.
+</p>
+
+</div>
+
+
+<div class="card glass">
+
+<h3>❓ Do you provide training after installation?</h3>
+
+<p>
+Yes. We provide software installation, user training and technical guidance.
+</p>
+
+</div>
+
+
+<div class="card glass">
+
+<h3>❓ Is remote support available?</h3>
+
+<p>
+Yes. We provide support through phone, WhatsApp and remote assistance.
+</p>
+
+</div>
+
+
+<div class="card glass">
+
+<h3>❓ Can old data be transferred?</h3>
+
+<p>
+Data migration and database assistance can be provided according to requirements.
+</p>
+
+</div>
+
+
+<div class="card glass">
+
+<h3>❓ Is your software suitable for multiple users?</h3>
+
+<p>
+Yes. Our solutions support multi-user environments with proper security permissions.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- AI Optimization: JSON-LD FAQ Schema for NSC Computers -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can software be customized according to our business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. NSC Computers develops user-defined software according to your business process and requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide ERP solutions for textile and garment industries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide solutions for garment manufacturing, textile, texturizing, weaving, dyeing and embroidery industries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide training after installation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide software installation, user training and technical guidance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is remote support available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide support through phone, WhatsApp and remote assistance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can old data be transferred?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data migration and database assistance can be provided according to requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is your software suitable for multiple users?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our solutions support multi-user environments with proper security permissions."
+      }
+    }
+  ]
+}
+</script>
+
+
+<footer>
+<p>
+
+© 2026 NSC Computers. All Rights Reserved.
+
+</p>
+
+
+</footer>
 
     
 </body>
